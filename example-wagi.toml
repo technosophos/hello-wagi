@@ -1,0 +1,18 @@
+
+# Call the main method
+[[module]]
+route = "/hello"
+module = "/PATH/TO/hello_wagi/target/wasm32-wasi/release/hello_wagi.wasm"
+
+# Replace `/PATH/TO` with the absolute path to this repo.
+[[module]]
+route = "/custom/hello"
+module = "/PATH/TO/hello_wagi/target/wasm32-wasi/release/hello_wagi.wasm"
+# This will call `fn hello()`
+entrypoint = "hello"
+
+[[module]]
+route = "/custom/goodbye"
+module = "/PATH/TO/hello_wagi/target/wasm32-wasi/release/hello_wagi.wasm"
+# This will call `fn goodbye()`
+entrypoint = "goodbye"
