@@ -11,8 +11,7 @@ module = "/PATH/TO/hello_wagi/target/wasm32-wasi/release/hello_wagi.wasm"
 # This will call `fn hello()`
 entrypoint = "hello"
 
-[[module]]
-route = "/custom/goodbye"
-module = "/PATH/TO/hello_wagi/target/wasm32-wasi/release/hello_wagi.wasm"
-# This will call `fn goodbye()`
-entrypoint = "goodbye"
+# NOTE: Because this module has a _routes() function, it will automatically map
+# /hello/hello to the hello method,
+# /hello/goodbye to the goodbye method,
+# /hello/main to the main method (which is called _start() in Wasm)
